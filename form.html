@@ -1,0 +1,104 @@
+<!-- new testing -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Personal Details</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+</head>
+<body>
+    <form>
+        <div class ="container" >
+            <h2>Personal Detail Form</h2>
+            <div class="box">
+                <label for="name">Name: </label>
+                <input type="text" id="name" name="name"  required >
+                <br><br>
+                <label for="track">Track: </label>
+                <input type="text" id="track" name="track" required>
+                <br><br>
+                <label for="age">Choose your Age: </label>
+                <select id="age">
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                </select>
+                <br><br>
+                <label for="gender">Select your gender: </label>
+                <div id="gender">
+                    <input type="radio" id="male" name="fav_language" value="male">
+                    <label for="html">Male</label>
+                    <input type="radio" id="female" name="fav_language" value="female">
+                    <label for="html">Female</label>
+                    <input type="radio" id="other" name="fav_language" value="other">
+                    <label for="html">Other</label><br><br>
+                </div>
+               
+    
+                <input type="button" id="btn" value="Submit" onclick="myFunction()"> 
+            </div>
+
+        </div>
+
+    </form>
+    <form method="myFunction()">
+        <div class="view">
+            <h2>Details</h2>
+            <label for="name">Name: <p id="p1"></p></label>
+            <br>
+            <label for="track">Track: <p id="p2"></p> </label>
+            <br>
+            <label for="age">Age: <p id="p3"></p></label>
+            <br>
+            <label for="gender">Gender: <p id ="p4"></p> </label>
+            <br>
+        </div>
+    </form>
+    
+    <script>
+         function myFunction() {
+            var letter=/^[A-Z][a-z]+$/;
+            var strText = document.getElementById("name").value;          
+            var strText1 = document.getElementById("track").value;
+            var strText2 = document.getElementById("age").value;
+            var strText3 = document.getElementById("gender").value;
+            document.            
+            document.getElementById("p1").innerHTML = strText;
+            document.getElementById("p2").innerHTML = strText1;
+            document.getElementById("p3").innerHTML = strText2;
+            document.getElementById("p4").innerHTML = strText3;
+
+            if(strText==null || strText=="" && strText1==null || strText1==""){
+                alert("Name and Track not to be blank");
+            }else if(strText.length<6){
+                alert("Name contain atleast 6 character")
+            }
+            else if(strText2<=25){d
+                document.getElementById("p3").style.color="green";
+            }else{
+                document.getElementById("p3").style.color="red";
+            }
+
+
+            if(strText.value.match(letter)){
+                return true;
+            }else{
+                alert("Wrong character");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
